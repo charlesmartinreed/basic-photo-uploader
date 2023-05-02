@@ -9,80 +9,94 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  /* padding-bottom: 1rem; */
-}
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
 
-#container__page {
-  /* width: 90vw; */
-  /* min-height: 100vh; */
-  padding: 1rem 0;
-  width: 100%;
-  /* min-height: 100%; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  row-gap: 2rem;
 
-  /* display: flex; */
-  /* align-items: flex-start; */
-  /* justify-content: center; */
-  background-color: rebeccapurple;
+  padding: 0.75rem 0.5rem 0;
+  
+  scrollbar-color: transparent rgba(22, 22, 22, 1);
+  scrollbar-width: thin;
 }
 
-.section {
-  /* width: 100%; */
-  /* padding: 1rem; */
-  /* min-height: 100px; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* margin-bottom: 1rem; */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 22, 22, 1);
+  border-radius: 4px;
 }
 
-#section__hero {
+button {
+  outline: none;
+  background: none;
+  border: none;
+}
+
+#box__photos {
+  height: 80vh;
+  max-height: 80vh;
+  width: 90%;
+  padding: 1rem;
   display: grid;
-  grid-template-columns: 1fr;
-  height: 70vh;
-  width: 60%;
-  grid-template-rows: 95% 5%;
-  /* padding-bottom: 1%; */
-  /* row-gap: 1rem; */
-  /* box-shadow: 0px 10px 15px -1px rgba(0, 0, 0, 0.1),
-    0px -10px 15px -1px rgba(0, 0, 0, 0.1); */
-  /* height: 60vh; */
-  /* width: 90vw; */
-  background: coral;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  overflow: hidden;
+  overflow-y: scroll;
+
+  border-radius: 8px;
+  box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.2);
 }
 
-#section__hero #container__photos {
-  background: royalblue;
+#box__ui {
+  height: 100px;
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
+  right: 2%;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-end;
 }
 
-#section__hero #container__photo__buttons {
-  width: 100%;
+#box__ui > * {
+  margin: 0 1rem;
+}
+
+.frame {
+  height: 250px;
   background: orangered;
+}
+
+#btn__file__upload {
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-size: 3rem;
+  font-weight: 900;
+  color: #222;
+
+  box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease-in-out;
 }
 
-#container__copy {
-  font-size: 2.7rem;
-  font-weight: 800;
-  height: 30vh;
-  background: seagreen;
-  padding: 0 4rem;
+#btn__file__upload:hover {
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.6);
 }
