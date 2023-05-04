@@ -22,7 +22,17 @@
     </div>
     <div class="box" id="box__ui">
       <p>Lorem ipsum dolor sit amet.</p>
-      <button id="btn__file__upload">+</button>
+      <div>
+        <!-- multiple allows for selecting multiple images simultaneously in the file picker -->
+        <label id="label__file__upload" for="input__file__upload">+</label>
+        <input
+          type="file"
+          name="input__file__upload"
+          id="input__file__upload"
+          accept=".jpg, .jpeg, .png, .gif"
+          multiple
+        />
+      </div>
     </div>
   </body>
 </html>
